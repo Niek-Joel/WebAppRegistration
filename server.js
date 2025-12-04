@@ -8,6 +8,9 @@ import {fileURLToPath} from 'node:url';
 import sectionsRouter from './routes/sections.js';
 import registrationsRouter from './routes/registrations.js';
 import termsRouter from './routes/terms.js';
+import subjectsRouter from './routes/subjects.js';
+import levelsRouter from './routes/levels.js';
+import scheduleTypesRouter from './routes/scheduletypes.js';
 
 const app = express();
 const PORT = 8080;
@@ -23,6 +26,9 @@ app.use(express.static(path.join(__dirname, 'public'))); // Serve static files f
 app.use('/api/sections', sectionsRouter);
 app.use('/api/registrations', registrationsRouter);
 app.use('/api/terms', termsRouter);
+app.use('/api/subjects', subjectsRouter);
+app.use('/api/levels', levelsRouter);
+app.use('/api/scheduletypes', scheduleTypesRouter);
 
 // DB connection
 let db = new sqlite3.Database('./store/jsu_sp26.db', sqlite3.OPEN_READWRITE, (err) => {

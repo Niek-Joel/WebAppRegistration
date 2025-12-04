@@ -12,7 +12,7 @@ class App extends Component {
 
     // Handle term selection from LandingsPage
     handleSelectTerm = (termid) => {
-        this.setstate({
+        this.setState({
             selectedTerm: termid,
             currentPage: 'search' // Switch to SearchPage
         });
